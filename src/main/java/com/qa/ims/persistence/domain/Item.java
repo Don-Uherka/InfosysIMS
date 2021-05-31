@@ -7,7 +7,14 @@ public class Item {
 	private Double price;
 	
 	public Item(String name, Double price) {
-		
+		this.setName(name);
+		this.setPrice(price);
+	}
+	
+	public Item(Integer id, String name, Double price) {
+		this.setId(id);
+		this.setName(name);
+		this.setPrice(price);
 	}
 	
 	public Integer getId() {
