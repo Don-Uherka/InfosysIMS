@@ -1,6 +1,7 @@
 package com.qa.ims.persistence.dao;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +9,6 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.qa.ims.persistence.domain.Customer;
 import com.qa.ims.persistence.domain.Item;
 import com.qa.ims.utils.DBUtils;
 
@@ -57,6 +57,22 @@ public class ItemDAOTest {
 		assertEquals(1, DAO.delete(1));
 	}
 	
+	@Test
+	public void testCreateException() {
+		final Item created = new Item(2L, "xboxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", (double) 600);
+		assertNull(DAO.create(created));
+	}
 	
+	@Test
+	public void testUpdateException() {
+		final Item updated = new Item(1L, "xboxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", (double) 600);
+		assertNull(DAO.update(updated));
+	}
+	
+	@Test
+	public void testReadException() {
+		final long ID = 0;
+		assertNull(DAO.read(ID));
+	} 
 
 }
