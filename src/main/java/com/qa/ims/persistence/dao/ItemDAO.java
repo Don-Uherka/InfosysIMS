@@ -33,7 +33,7 @@ public class ItemDAO implements Dao<Item> {
 				Statement statement = connection.createStatement();
 				ResultSet resultSet = statement.executeQuery("SELECT * FROM items");) {
 			List<Item> items = new ArrayList<>();
-			while (resultSet.next()) {
+			while (resultSet.next()) { 
 				items.add(modelFromResultSet(resultSet));
 			}
 			return items;
@@ -98,7 +98,7 @@ public class ItemDAO implements Dao<Item> {
 			return read(item.getId());
 		} catch (Exception e) {
 			 LOGGER.debug(e);
-			 LOGGER.error(e.getMessage());
+			 LOGGER.error(e.getMessage()); 
 		}
 		return null;
 	}

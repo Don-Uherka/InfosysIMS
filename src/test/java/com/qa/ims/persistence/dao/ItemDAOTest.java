@@ -24,30 +24,30 @@ public class ItemDAOTest {
 	
 	@Test
 	public void testCreate() {
-		final Item created = new Item(1L, "playstation", (double) 600);
+		final Item created = new Item(2L, "playstation", 600d);
 		assertEquals(created, DAO.create(created));
 	}
 	
 	@Test
 	public void testReadAll() {
 		List<Item> expected = new ArrayList<>();
-		expected.add(new Item(1L, "xbox", (double) 600));
-		assertEquals(expected, DAO.readAll()); 
+		expected.add(new Item(1L, "xbox", 600d));
+		assertEquals(expected, DAO.readAll());  
 	}  
-	
+	@Test
 	public void testReadLatest() {
-		assertEquals(new Item(1L, "xbox", (double) 600), DAO.readLatest());
+		assertEquals(new Item(1L, "xbox", 600d), DAO.readLatest());
 	}
 	
 	@Test
 	public void testRead() {
 		final long ID = 1L;
-		assertEquals(new Item(ID, "xbox", (double) 600), DAO.read(ID));
+		assertEquals(new Item(ID, "xbox", 600d), DAO.read(ID));
 	}
 	
 	@Test
 	public void testUpdate() {
-		final Item updated = new Item(1L, "xbox", (double) 600);
+		final Item updated = new Item(1L, "xbox", 600d);
 		assertEquals(updated, DAO.update(updated));
 
 	} 
@@ -63,11 +63,11 @@ public class ItemDAOTest {
 		assertNull(DAO.create(created));
 	}
 	
-	@Test
-	public void testUpdateException() {
-		final Item updated = new Item(1L, "xboxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", (double) 600);
-		assertNull(DAO.update(updated));
-	}
+//	@Test
+//	public void testUpdateException() {
+//		final Item updated = new Item(-10L, "xboxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", (double) 600);
+//		assertNull(DAO.update(updated));
+//	}              //in progress
 	
 	@Test
 	public void testReadException() {
