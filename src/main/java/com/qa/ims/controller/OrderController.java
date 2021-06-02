@@ -33,22 +33,30 @@ public class OrderController implements CrudController<Order> {
 
 	@Override
 	public Order create() {
-		// TODO Auto-generated method stub
-		return null;
+		LOGGER.info("Please enter an id for the order");
+		Long orderId = utils.getLong();
+		LOGGER.info("Please enter a customer id for the order");
+		Long fkCustomerId = utils.getLong();
+		Order order = orderDAO.create(new Order(orderId, fkCustomerId));
+		LOGGER.info("Order created");
+		return order;
 	}
 
 	@Override
 	public Order update() {
 		LOGGER.info("Please enter the id of the order you would like to update");
 		Long orderId = utils.getLong();
-		Order order = orderDAO.update(new Order(orderId, customerId));
-		return null;
+		LOGGER.info("Please enter the id of the customer you would like to update");
+		Long fkCustomerId = utils.getLong();
+		Order order = orderDAO.update(new Order(orderId, fkCustomerId));
+		return order;
 	}
 
 	@Override
 	public int delete() {
-		// TODO Auto-generated method stub
-		return 0;
+		LOGGER.info("Please enter the id of the order you would like to delete");
+		Long orderId = utils.getLong();
+		return orderDAO.delete(orderId);
 	}
 	
 
