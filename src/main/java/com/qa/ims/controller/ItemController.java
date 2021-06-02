@@ -3,6 +3,7 @@ package com.qa.ims.controller;
 import java.util.List;
 
 
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,7 +28,7 @@ public class ItemController implements CrudController<Item> {
 		List<Item> items = itemDAO.readAll();
 		for (Item item : items) {
 			LOGGER.info(item);
-		}
+		} 
 		return items; 
 	}
 	

@@ -78,7 +78,7 @@ public class Item {
 		if (price == null) {
 			if (other.price != null)
 				return false;
-		} else if (!price.equals(other.price))
+		} else if (!price.equals(other.price)) 
 			return false;
 		return true;
 	}
