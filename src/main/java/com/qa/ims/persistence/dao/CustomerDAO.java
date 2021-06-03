@@ -27,7 +27,7 @@ public class CustomerDAO implements Dao<Customer> {
 	}
 
 	/**
-	 * Reads all customers from the database
+	 * Reads all customers from the database 
 	 * 
 	 * @return A list of customers
 	 */
@@ -58,9 +58,9 @@ public class CustomerDAO implements Dao<Customer> {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
 		}
-		return null;
+		return null; 
 	}
-
+ 
 	/**
 	 * Creates a customer in the database
 	 * 
@@ -76,7 +76,7 @@ public class CustomerDAO implements Dao<Customer> {
 			statement.executeUpdate();
 			return readLatest();
 		} catch (Exception e) {
-			LOGGER.debug(e);
+			LOGGER.debug(e); 
 			LOGGER.error(e.getMessage());
 		}
 		return null;
@@ -95,7 +95,7 @@ public class CustomerDAO implements Dao<Customer> {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
 		}
-		return null;
+		return null;   
 	}
 
 	/**
