@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS `ims`.`orderItems` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `fkOrderId` INT(11) NOT NULL,
     `fkItemId` INT(11) NOT NULL,
+    `quantity` INT(11) NOT NULL,
     PRIMARY KEY (`id`),
     FOREIGN KEY (`fkOrderId`) REFERENCES orders(id),
     FOREIGN KEY (`fkItemId`) REFERENCES items(id)
