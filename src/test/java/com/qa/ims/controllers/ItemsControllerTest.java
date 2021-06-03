@@ -44,7 +44,7 @@ public class ItemsControllerTest {
   
 		Mockito.verify(utils, Mockito.times(1)).getString(); 
 		Mockito.verify(utils, Mockito.times(1)).getDouble();
-		Mockito.verify(dao, Mockito.times(1)).create(created);
+		Mockito.verify(dao, Mockito.times(1)).create(created);  
 	}
 	
 	
@@ -61,9 +61,9 @@ public class ItemsControllerTest {
 
 		Mockito.verify(this.utils, Mockito.times(1)).getLong();
 		Mockito.verify(this.utils, Mockito.times(1)).getString();
-		Mockito.verify(this.utils, Mockito.times(1)).getDouble();
+		Mockito.verify(this.utils, Mockito.times(1)).getDouble();  
 		Mockito.verify(this.dao, Mockito.times(1)).update(updated);
-	}
+	}  
 	
 	@Test
 	public void testDelete() {

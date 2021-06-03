@@ -31,7 +31,7 @@ public class OrderController implements CrudController<Order> {
 		for (Order order : orders) {
 			LOGGER.info(order);
 		}
-		return orders;
+		return orders; 
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class OrderController implements CrudController<Order> {
 		Long fkCustomerId = utils.getLong();
 		Order order = orderDAO.create(new Order(fkCustomerId));
 		LOGGER.info("Order created");
-		return order;
+		return order;  
 	}
 
 	@Override
@@ -58,13 +58,13 @@ public class OrderController implements CrudController<Order> {
 		return null;
 	}
 
-	private OrderItems addItem() {
+	public OrderItems addItem() {
 		LOGGER.info("Please enter the id of the order you would like to update");
 		Long fkOrderId = utils.getLong();
 		LOGGER.info("Please enter the id of the item you would like to add");
 		Long fkItemId = utils.getLong();
 		LOGGER.info("Please enter a quantity");
-		Long quantity = utils.getLong();
+		Long quantity = utils.getLong();    
 		OrderItems orderItems = orderItemsDAO.addItem(new OrderItems(fkItemId, fkOrderId, quantity));
 		return orderItems;
 		
