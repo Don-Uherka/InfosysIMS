@@ -3,7 +3,7 @@ package com.qa.ims.persistence.domain;
 public class OrderItems {
 	
 	private Long orderItemsId;
-	private Long fkItemsId;
+	private Long fkItemId;
 	private Long fkOrderId;
 	
 	public OrderItems(Long orderItemsId) {
@@ -13,7 +13,7 @@ public class OrderItems {
 	public OrderItems(Long orderItemsId, Long fkItemsId, Long fkOrderId) {
 		super();
 		this.orderItemsId = orderItemsId;
-		this.fkItemsId = fkItemsId;
+		this.fkItemId = fkItemsId;
 		this.fkOrderId = fkOrderId;
 	}
 	
@@ -24,11 +24,11 @@ public class OrderItems {
 	public void setOrderItemsId(Long orderItemsId) {
 		this.orderItemsId = orderItemsId;
 	}
-	public Long getFkItemsId() {
-		return fkItemsId;
+	public Long getFkItemId() {
+		return fkItemId;
 	}
-	public void setFkItemsId(Long fkItemsId) {
-		this.fkItemsId = fkItemsId;
+	public void setFkItemId(Long fkItemsId) {
+		this.fkItemId = fkItemsId;
 	}
 	public Long getFkOrderId() {
 		return fkOrderId;
@@ -40,14 +40,14 @@ public class OrderItems {
 	
 	@Override
 	public String toString() {
-		return "OrderItems [orderItemsId=" + orderItemsId + ", fkItemsId=" + fkItemsId + ", fkOrderId=" + fkOrderId
+		return "OrderItems [orderItemsId=" + orderItemsId + ", fkItemsId=" + fkItemId + ", fkOrderId=" + fkOrderId
 				+ "]";
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((fkItemsId == null) ? 0 : fkItemsId.hashCode());
+		result = prime * result + ((fkItemId == null) ? 0 : fkItemId.hashCode());
 		result = prime * result + ((fkOrderId == null) ? 0 : fkOrderId.hashCode());
 		result = prime * result + ((orderItemsId == null) ? 0 : orderItemsId.hashCode());
 		return result;
@@ -63,10 +63,10 @@ public class OrderItems {
 		if (getClass() != obj.getClass())
 			return false;
 		OrderItems other = (OrderItems) obj;
-		if (fkItemsId == null) {
-			if (other.fkItemsId != null)
+		if (fkItemId == null) {
+			if (other.fkItemId != null)
 				return false;
-		} else if (!fkItemsId.equals(other.fkItemsId))
+		} else if (!fkItemId.equals(other.fkItemId))
 			return false;
 		if (fkOrderId == null) {
 			if (other.fkOrderId != null)

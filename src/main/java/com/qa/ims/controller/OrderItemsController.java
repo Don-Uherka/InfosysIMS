@@ -40,8 +40,8 @@ public class OrderItemsController implements CrudController<OrderItems> {
 		LOGGER.info("Please enter an order id for the order items");
 		Long fkOrderId = utils.getLong();
 		LOGGER.info("Please enter an items id for the order items");
-		Long fkItemsId = utils.getLong();
-		OrderItems orderItems = orderItemsDAO.create(new OrderItems(orderItemsId, fkOrderId, fkItemsId));
+		Long fkItemId = utils.getLong();
+		OrderItems orderItems = orderItemsDAO.create(new OrderItems(orderItemsId, fkOrderId, fkItemId));
 		LOGGER.info("Order items created");
 		return orderItems;
 	}

@@ -70,7 +70,7 @@ public class OrderItemsDAO implements Dao<OrderItems> {
 						.prepareStatement("INSERT INTO orderItems(orderItemId, fkOrderId, fkItemId) VALUES (?, ?, ?)");) {
 			statement.setLong(1, orderItems.getOrderItemsId());
 			statement.setLong(2, orderItems.getFkOrderId());
-			statement.setLong(3, orderItems.getFkItemsId());
+			statement.setLong(3, orderItems.getFkItemId());
 			statement.executeUpdate();
 			return readLatest();
 		} catch (Exception e) { 
@@ -87,7 +87,7 @@ public class OrderItemsDAO implements Dao<OrderItems> {
 						.prepareStatement("UPDATE orders SET orderId = ?, fkCustomerId = ? id = ?");) {
 			statement.setLong(1, orderItems.getOrderItemsId());
 			statement.setLong(2, orderItems.getFkOrderId());
-			statement.setLong(3, orderItems.getFkItemsId());
+			statement.setLong(3, orderItems.getFkItemId());
 			return read(orderItems.getOrderItemsId());
 		} catch (Exception e) {
 			 LOGGER.debug(e);
