@@ -41,7 +41,7 @@ public class ItemsControllerTest {
 		Mockito.when(dao.create(created)).thenReturn(created);
 
 		assertEquals(created, controller.create()); 
- 
+  
 		Mockito.verify(utils, Mockito.times(1)).getString(); 
 		Mockito.verify(utils, Mockito.times(1)).getDouble();
 		Mockito.verify(dao, Mockito.times(1)).create(created);

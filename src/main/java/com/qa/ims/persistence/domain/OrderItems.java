@@ -5,19 +5,24 @@ public class OrderItems {
 	private Long orderItemsId;
 	private Long fkItemId;
 	private Long fkOrderId;
+	private Long quantity;
 	
 	public OrderItems(Long orderItemsId) {
 		super();
 		this.orderItemsId = orderItemsId;
 	}
-	public OrderItems(Long orderItemsId, Long fkItemsId, Long fkOrderId) {
+	
+	
+	
+	public OrderItems(Long fkItemId, Long fkOrderId, Long quantity) {
 		super();
-		this.orderItemsId = orderItemsId;
-		this.fkItemId = fkItemsId;
+		this.fkItemId = fkItemId;
 		this.fkOrderId = fkOrderId;
+		this.quantity = quantity;
 	}
-	
-	
+
+
+
 	public Long getOrderItemsId() {
 		return orderItemsId;
 	}
@@ -38,6 +43,19 @@ public class OrderItems {
 	}
 	
 	
+	
+	public Long getQuantity() {
+		return quantity;
+	}
+
+
+
+	public void setQuantity(Long quantity) {
+		this.quantity = quantity;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "OrderItems [orderItemsId=" + orderItemsId + ", fkItemsId=" + fkItemId + ", fkOrderId=" + fkOrderId

@@ -111,10 +111,26 @@ public class OrderItemsDAO implements Dao<OrderItems> {
 
 	@Override
 	public OrderItems modelFromResultSet(ResultSet resultSet) throws SQLException {
-		Long orderItemsId = resultSet.getLong("orderItemsId");
+		Long quantity = resultSet.getLong("quantity");
 		Long fkOrderId = resultSet.getLong("fkOrderId");
-		Long fkItemsId = resultSet.getLong("fkItemsId");
-		return new OrderItems(orderItemsId, fkOrderId, fkItemsId);
+		Long fkItemsId = resultSet.getLong("fkItemId");
+		return new OrderItems(fkOrderId, fkItemsId, quantity);
+	}
+	
+	public OrderItems addItem(OrderItems orderItems) {
+		try (Connection connection = DBUtils.getInstance().getConnection();
+				PreparedStatement statement = connection
+						.prepareStatement("INSERT INTO orderItems(fkOrderId, fkItemId, quantity) VALUES (?, ?, ?)");) {
+			statement.setLong(1, orderItems.getFkOrderId());
+			statement.setLong(2, orderItems.getFkItemId());
+			statement.setLong(3, orderItems.getQuantity());
+			statement.executeUpdate();
+			return readLatest();
+		} catch (Exception e) { 
+			 LOGGER.debug(e);
+			 LOGGER.error(e.getMessage());
+		}
+		return null;
 	}
 	
 	

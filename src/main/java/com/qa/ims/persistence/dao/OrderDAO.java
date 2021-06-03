@@ -68,9 +68,8 @@ public class OrderDAO implements Dao<Order>{
 	public Order create(Order order) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("INSERT INTO orders(orderId, fkCustomerId) VALUES (?, ?)");) {
-			statement.setLong(1, order.getOrderId());
-			statement.setLong(2, order.getFkCustomerId());
+						.prepareStatement("INSERT INTO orders(fkCustomerId) VALUES (?)");) {
+			statement.setLong(1, order.getFkCustomerId());
 			statement.executeUpdate();
 			return readLatest();
 		} catch (Exception e) { 
@@ -110,7 +109,7 @@ public class OrderDAO implements Dao<Order>{
 
 	@Override
 	public Order modelFromResultSet(ResultSet resultSet) throws SQLException {
-		Long orderId = resultSet.getLong("orderId");
+		Long orderId = resultSet.getLong("id");
 		Long fkCustomerId = resultSet.getLong("fkCustomerId");
 		return new Order(orderId, fkCustomerId);
 	}
