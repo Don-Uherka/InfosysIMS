@@ -36,8 +36,8 @@ public class OrderItemsController implements CrudController<OrderItems> {
 	@Override
 	public OrderItems create() {
 		LOGGER.info("Please enter an id for the order items");
-		Long orderItemsId = utils.getLong();
-		LOGGER.info("Please enter an order id for the order items");
+		Long orderItemsId = utils.getLong(); 
+		LOGGER.info("Please enter an order id for the order items"); 
 		Long fkOrderId = utils.getLong();
 		LOGGER.info("Please enter an items id for the order items");
 		Long fkItemId = utils.getLong();
