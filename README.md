@@ -12,7 +12,8 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Give examples
+You will need tp install Eclipse IDE you can find the download by searching Eclipse IDE
+You will need to install MYSQL you can find this by searching mySQL you will also want mySQL workbench and the MySQL command line Client.
 ```
 
 ### Installing
@@ -22,7 +23,16 @@ A step by step series of examples that tell you how to get a development env run
 Say what the step will be
 
 ```
-Give the example
+1. Open the project with eclipse
+2. open the src/main/java folder
+3. open the com.qa.ims package
+4. double click on the Runner.Java class to open it.
+5. right click inside the class and go down to run as and then 1 Java Application.
+6. then at the bottom in the console you will see option like CUSTOMER ITEM ORDER.
+7. Type in one of the options 
+8. You then can type CREATE READ UPDATE DELETE 
+9.  Type READ
+10.You will then be presented with everything inside of the database you have selected.
 ```
 
 And repeat
@@ -36,6 +46,10 @@ End with an example of getting some data out of the system or using it for a lit
 ## Running the tests
 
 Explain how to run the automated tests for this system. Break down into which tests and what they do
+
+You can run these tests by going into any testing class and right click and go down to run coverage as-junit 1. 
+The tests for controllers will test the CRUD functions of the controller 
+The tests for the DAO will test how the project is interacting with the database to insure everything is being submitted correctly.
 
 ### Unit Tests 
 
