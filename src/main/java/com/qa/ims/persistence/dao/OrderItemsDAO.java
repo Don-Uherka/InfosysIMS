@@ -67,8 +67,8 @@ public class OrderItemsDAO implements Dao<OrderItems> {
 	public OrderItems create(OrderItems orderItems) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("INSERT INTO orderItems(orderItemId, fkOrderId, fkItemId) VALUES (?, ?, ?)");) {
-			statement.setLong(1, orderItems.getOrderItemsId());
+						.prepareStatement("INSERT INTO orderItems(quantity, fkOrderId, fkItemId) VALUES (?, ?, ?)");) {
+			statement.setLong(1, orderItems.getQuantity());
 			statement.setLong(2, orderItems.getFkOrderId());
 			statement.setLong(3, orderItems.getFkItemId());
 			statement.executeUpdate();
@@ -84,8 +84,8 @@ public class OrderItemsDAO implements Dao<OrderItems> {
 	public OrderItems update(OrderItems orderItems) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("UPDATE orders SET orderId = ?, fkCustomerId = ? id = ?");) {
-			statement.setLong(1, orderItems.getOrderItemsId());
+						.prepareStatement("UPDATE orders SET orderId = ?, fkCustomerId = ? quantity = ?");) {
+			statement.setLong(1, orderItems.getQuantity());
 			statement.setLong(2, orderItems.getFkOrderId());
 			statement.setLong(3, orderItems.getFkItemId());
 			return read(orderItems.getOrderItemsId());
