@@ -1,4 +1,4 @@
-Coverage: 34%
+Coverage: 72%
 # IMS Project
 
 This IMS project covers Java, Maven, MYSQL, JUNIT testing all working together in one project. You can keep track of Customer data and create customers to be added to the customer table in the database, Once the customer is created you are able to update the customer to change the values or delete the customer completely. This project also gives you the capability to create and store Item objects, once an item is created you can update and change the values of an item or delete the item completely. The customer is tied to the orders of the project giving the customer an option to create an order and add items to the order. Items can be stored in the order using the Order/Items table which connects Items to Orders to handle the relationship between the two.
