@@ -2,6 +2,7 @@ package com.qa.ims.controller;
 
 import java.util.List;
 
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -51,7 +52,7 @@ public class CustomerController implements CrudController<Customer> {
 		LOGGER.info("Customer created");
 		return customer;
 	}
-
+ 
 	/**
 	 * Updates an existing customer by taking in user input
 	 */
